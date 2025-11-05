@@ -18,7 +18,12 @@ if ( have_posts() ) :
 			$flexible_groups = array(
 				'secoes_home',
 				'secoes_video_flex',
+				'secao_formulario',
 				'page_sections',
+			);
+
+			$template_aliases = array(
+				'formulario_home' => array( 'section_form', 'secao_formulario' ),
 			);
 
 			foreach ( $flexible_groups as $flexible_field ) {
@@ -39,11 +44,19 @@ if ( have_posts() ) :
 
 					$template_base = 'template-parts/flexible/';
 
-					$potential_templates = array_unique(
-						array(
-							$layout_slug,
-							str_replace( '-', '_', $layout_slug ),
-							str_replace( '_', '-', $layout_slug ),
+					$potential_templates = array(
+						$layout_slug,
+						str_replace( '-', '_', $layout_slug ),
+						str_replace( '_', '-', $layout_slug ),
+					);
+
+					if ( isset( $template_aliases[ $layout_slug ] ) ) {
+						$potential_templates = array_merge( (array) $template_aliases[ $layout_slug ], $potential_templates );
+					}
+
+					$potential_templates = array_values(
+						array_unique(
+							array_filter( $potential_templates )
 						)
 					);
 
