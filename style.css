@@ -1,0 +1,27 @@
+/*
+Theme Name: Site Teste Tower
+Theme URI: https://example.com/
+Author: Carla Galdino
+Author URI: https://example.com/
+Description: Tema personalizado para o site de teste Tower utilizando recursos nativos do WordPress.
+Version: 0.1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: site-teste-tower
+*/
+
+/* Este arquivo mantém apenas o cabeçalho obrigatório do tema e regras mínimas.
+   Os estilos principais estão em assets/css/main.css e são enfileirados via functions.php. */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "M PLUS 1p", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #f5f7fa;
+    color: #1f2933;
+    line-height: 1.6;
+}
