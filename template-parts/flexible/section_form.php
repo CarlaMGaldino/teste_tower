@@ -5,7 +5,7 @@
  */
 
 $form_title = get_sub_field( 'form_title' );
-
+$form_bg_image = get_sub_field( 'form_bg_image' );
 ?>
 
 <section class="opportunity-section">
@@ -13,7 +13,7 @@ $form_title = get_sub_field( 'form_title' );
     <div class="container">
         <div class="opportunity-wrapper">
             <div class="opportunity-image">
-                <img src="img/opportunity.jpg" alt="Building">
+                <img src="<?php echo esc_url( $form_bg_image ); ?>" alt="Building">
                 <div class="image-overlay">
                     <h2><?php echo esc_html( $form_title ); ?></h2>
                     <span class="arrow">➜</span>
@@ -23,32 +23,31 @@ $form_title = get_sub_field( 'form_title' );
             <div class="opportunity-form">
                 <form action="#" method="post">
                     <div class="form-field">
-                        <input type="text" name="name" placeholder="NAME" required>
+                        <input type="text" name="name" placeholder="NOME" required>
                     </div>
                     <div class="form-field">
-                        <input type="tel" name="phone" placeholder="PHONE" required>
+                        <input type="tel" name="phone" placeholder="CELULAR" required>
                     </div>
                     <div class="form-field">
                         <input type="email" name="email" placeholder="E-MAIL" required>
                     </div>
                     <div class="form-field">
                         <select name="purpose" required>
-                            <option value="">LOOKING FOR PROPERTIES TO:</option>
-                            <option value="live">Live</option>
-                            <option value="invest">Invest</option>
+                            <option value="">Você está procurando imóveis para:</option>
+                            <option value="live">Morar</option>
+                            <option value="invest">Investir</option>
                         </select>
                     </div>
 
                     <div class="checkbox-field">
                         <label>
                             <input type="checkbox" required>
-                            I declare that I have read and agree with the Privacy Policy and authorize the processing of
-                            my data for the specified purpose.
+                            Declaro que li e concordo com a Política de Privacidade e autorizo o tratamento dos meus dados para o fim especificado.
                         </label>
                     </div>
 
                     <button type="submit" class="btn-submit">
-                        SUBMIT <span>↗</span>
+                        CADASTRAR <span>↗</span>
                     </button>
                 </form>
             </div>
